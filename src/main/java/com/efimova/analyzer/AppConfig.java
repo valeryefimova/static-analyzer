@@ -14,7 +14,6 @@ public class AppConfig {
     public Analyzer analyzer() {
         return new Analyzer();
     }
-
     @Bean
     public Context checkingContext() {
         return new Context();
@@ -37,5 +36,6 @@ public class AppConfig {
     }
     @Bean
     ImportFromSamePackageRule importFromSamePackageRule(){return new ImportFromSamePackageRule();}
-
+    @Bean
+    NullAssignmentRule nullAssignmentRule(){return new NullAssignmentRule();}
 }

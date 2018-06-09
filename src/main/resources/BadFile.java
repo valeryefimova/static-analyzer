@@ -45,5 +45,9 @@ public class badFile {
         if((b = false) || (c = true)){
             System.out.println("");
         }
+
+        String s = null;
+        // something...
+        s = null;
     }
 }
