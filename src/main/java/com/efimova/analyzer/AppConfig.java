@@ -1,9 +1,6 @@
 package com.efimova.analyzer;
 
-import com.efimova.analyzer.rules.AlwaysTrueRule;
-import com.efimova.analyzer.rules.AssignmentInOperandsRule;
-import com.efimova.analyzer.rules.NamingConventionRule;
-import com.efimova.analyzer.rules.NotNullCuRule;
+import com.efimova.analyzer.rules.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -38,4 +35,7 @@ public class AppConfig {
     AssignmentInOperandsRule assignmentInOperandsRule() {
         return new AssignmentInOperandsRule();
     }
+    @Bean
+    ImportFromSamePackageRule importFromSamePackageRule(){return new ImportFromSamePackageRule();}
+
 }

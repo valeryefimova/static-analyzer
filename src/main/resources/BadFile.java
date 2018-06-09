@@ -6,6 +6,8 @@ import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.efimova.analyzer.*;
+
 import java.util.List;
 
 /**

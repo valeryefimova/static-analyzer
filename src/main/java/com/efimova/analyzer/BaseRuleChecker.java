@@ -9,11 +9,12 @@ import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
  */
 public class BaseRuleChecker extends VoidVisitorAdapter<Context> {
     protected String topClassName;
+
     @Override
     public void visit(CompilationUnit compilationUnit, Context ctx) {
         topClassName = compilationUnit.getTypes().stream()
-                .filter(t-> t.isPublic() && t.isTopLevelType()).findAny()
-                .map(NodeWithSimpleName::getNameAsString).get();
+                .filter(t -> t.isPublic() && t.isTopLevelType()).findAny()
+                .map(NodeWithSimpleName::getNameAsString).orElse("Untitled");
         super.visit(compilationUnit, ctx);
     }
 }
