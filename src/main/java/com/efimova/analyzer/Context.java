@@ -11,7 +11,7 @@ import java.util.List;
  * This class keeps all info about static analysis
  */
 @Component
-public class CheckingContext {
+public class Context {
 
     @Getter
     private HashMap<String, List<String>> messages = new HashMap<>();

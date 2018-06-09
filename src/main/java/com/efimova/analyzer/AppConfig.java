@@ -18,8 +18,8 @@ public class AppConfig {
     }
 
     @Bean
-    public CheckingContext checkingContext(){
-        return new CheckingContext();
+    public Context checkingContext(){
+        return new Context();
     }
     @Bean
     public AlwaysTrueRule alwaysTrueRule(){

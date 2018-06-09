@@ -1,7 +1,7 @@
 package com.efimova.analyzer.rules;
 
 import com.efimova.analyzer.BaseRuleChecker;
-import com.efimova.analyzer.CheckingContext;
+import com.efimova.analyzer.Context;
 import com.github.javaparser.ast.CompilationUnit;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class AlwaysTrueRule extends BaseRuleChecker {
     @Override
-    public void visit(CompilationUnit compilationUnit, CheckingContext ctx) {
+    public void visit(CompilationUnit compilationUnit, Context ctx) {
     }
 }

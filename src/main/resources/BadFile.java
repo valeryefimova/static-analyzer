@@ -9,20 +9,23 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * This class holds all checkers and applies them one by one to given file (CU).
+ * This file if for testing static analyer. Intentionally contains errors.
  */
 @Service
-public class Analyzer {
+public class badFile {
     private List<BaseRuleChecker> ruleCheckers;
     @Getter
-    private Context ctx;
+    private Context CTX;
+
+    public static final String s = "S";
 
     @Autowired
-    public void setRuleCheckers(List<BaseRuleChecker> ruleCheckers){
+    public void SetRuleCheckers(List<BaseRuleChecker> ruleCheckers){
         this.ruleCheckers = ruleCheckers;
     }
+
     @Autowired
-    public void setCtx(Context ctx) {
+    public void set_Ctx(Context ctx) {
         this.ctx = ctx;
     }
 
@@ -30,6 +33,8 @@ public class Analyzer {
     public void processUnit(CompilationUnit unit) {
         for (BaseRuleChecker checker: ruleCheckers) {
             checker.visit(unit, ctx);
+            int X = 0;
+            Float _y = X +1;
         }
     }
 }
