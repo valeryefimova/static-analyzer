@@ -1,6 +1,7 @@
 package com.efimova.analyzer;
 
 import com.efimova.analyzer.rules.AlwaysTrueRule;
+import com.efimova.analyzer.rules.AssignmentInOperandsRule;
 import com.efimova.analyzer.rules.NamingConventionRule;
 import com.efimova.analyzer.rules.NotNullCuRule;
 import org.springframework.context.annotation.Bean;
@@ -18,19 +19,23 @@ public class AppConfig {
     }
 
     @Bean
-    public Context checkingContext(){
+    public Context checkingContext() {
         return new Context();
     }
     @Bean
-    public AlwaysTrueRule alwaysTrueRule(){
+    public AlwaysTrueRule alwaysTrueRule() {
         return new AlwaysTrueRule();
     }
     @Bean
-    public NotNullCuRule notNullCuRule (){
+    public NotNullCuRule notNullCuRule () {
         return new NotNullCuRule();
     }
     @Bean
-    public NamingConventionRule namingConventionRule (){
+    public NamingConventionRule namingConventionRule () {
         return new NamingConventionRule();
+    }
+    @Bean
+    AssignmentInOperandsRule assignmentInOperandsRule() {
+        return new AssignmentInOperandsRule();
     }
 }

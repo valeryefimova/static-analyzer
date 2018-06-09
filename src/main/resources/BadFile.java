@@ -36,5 +36,12 @@ public class badFile {
             int X = 0;
             Float _y = X +1;
         }
+
+        boolean b = true;
+        boolean c = false;
+
+        if((b = false) || (c = true)){
+            System.out.println("");
+        }
     }
 }
