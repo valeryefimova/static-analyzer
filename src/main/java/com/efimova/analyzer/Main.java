@@ -32,8 +32,10 @@ public class Main {
                 Files.walkFileTree(p, new SimpleFileVisitor<Path>() {
                     @Override
                     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-                        a.getCtx().setCurrentFileName(file.getFileName().toString());
-                        analyze(file, a);
+                        if (file.getFileName().toString().endsWith(".java")) {
+                            a.getCtx().setCurrentFileName(file.getFileName().toString());
+                            analyze(file, a);
+                        }
                         return FileVisitResult.CONTINUE;
                     }
                 });
