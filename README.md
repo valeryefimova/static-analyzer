@@ -30,3 +30,7 @@ BadFile.java:	 If statements "if((b = false) || (c = true))" contains assignment
 BadFile.java:	 Import Statement "import com.efimova.analyzer.*;" in not necessary. Import of the same package.
 BadFile.java:	 Null assignment found in: "// something... s = null;". Make sure you really need to assign NULL here: s = null
 ```
+
+
+##Build:
+```mvn package```
