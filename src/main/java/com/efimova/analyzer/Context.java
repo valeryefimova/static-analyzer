@@ -1,6 +1,7 @@
 package com.efimova.analyzer;
 
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -15,10 +16,12 @@ public class Context {
 
     @Getter
     private HashMap<String, List<String>> messages = new HashMap<>();
+    @Getter @Setter
+    String currentFileName = "Undefined";
 
-    public void addMessage(String className, String message) {
-        messages.putIfAbsent(className, new ArrayList<>());
-        messages.get(className).add(message);
+    public void addMessage(String message) {
+        messages.putIfAbsent(currentFileName, new ArrayList<>());
+        messages.get(currentFileName).add(message);
     }
 
     public void printContext(){

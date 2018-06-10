@@ -17,6 +17,6 @@ public class NotNullCuRule extends BaseRuleChecker {
         if (compilationUnit != null) {
             return;
         }
-        ctx.addMessage(UNDEFIED, "Unit " + UNDEFIED + ": is NULL.");
+        ctx.addMessage("Unit " + UNDEFIED + ": is NULL.");
     }
 }

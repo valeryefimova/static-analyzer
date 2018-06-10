@@ -30,7 +30,7 @@ public class AssignmentInOperandsRule extends BaseRuleChecker {
 
         @Override
         public void visit(AssignExpr expr, Context ctx) {
-            ctx.addMessage(top,
+            ctx.addMessage(
                     "If statements \"if(" + ifStmt.getCondition()
                             + ")\" contains assignment: \"" + expr.toString() + "\"");
             super.visit(expr, ctx);

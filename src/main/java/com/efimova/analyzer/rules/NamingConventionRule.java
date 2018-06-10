@@ -19,7 +19,7 @@ public class NamingConventionRule extends BaseRuleChecker {
     @Override
     public void visit(ClassOrInterfaceDeclaration declaration, Context ctx) {
         if (!declaration.getNameAsString().matches(CLASS_NAME)) {
-            ctx.addMessage(topClassName,
+            ctx.addMessage(
                     "Class name \"" + declaration.getNameAsString() + "\" must match the pattern " + CLASS_NAME);
         }
         super.visit(declaration, ctx);
@@ -30,7 +30,7 @@ public class NamingConventionRule extends BaseRuleChecker {
         String method = declaration.getNameAsString();
 
         if (!method.matches(VAR_METH_NAME)) {
-            ctx.addMessage(topClassName, "Method " + method + ": \""
+            ctx.addMessage("Method " + method + ": \""
                     + method + "\" must match the pattern " + VAR_METH_NAME);
         }
 
@@ -44,7 +44,7 @@ public class NamingConventionRule extends BaseRuleChecker {
         String name = param.getNameAsString();
         if (!name.matches(VAR_METH_NAME)) {
             ctx.addMessage(
-            topClassName, "In Method :" + methodName + " parameter \""
+                    "In Method :" + methodName + " parameter \""
                     + param.getNameAsString() + "\" must match the pattern " + VAR_METH_NAME);
         }
     }
@@ -55,7 +55,7 @@ public class NamingConventionRule extends BaseRuleChecker {
             String name = variable.getNameAsString();
 
             if (!name.matches(VAR_METH_NAME)) {
-                ctx.addMessage(topClassName, "In declaration " + declaration + ": "
+                ctx.addMessage("In declaration " + declaration + ": "
                 + "variable \"" + name + "\" must match regex " + VAR_METH_NAME);
             }
         }
@@ -70,7 +70,7 @@ public class NamingConventionRule extends BaseRuleChecker {
             boolean isFinal = field.isFinal();
 
             if ((isFinal && !name.matches(CONST_NAME)) || (!isFinal && !name.matches(VAR_METH_NAME))) {
-                ctx.addMessage(topClassName, "In declaration "
+                ctx.addMessage("In declaration "
                         + field.toString().replace(System.lineSeparator(), " ") + ": "
                         + "field \"" + name + "\" must match regex " + (isFinal? CONST_NAME : VAR_METH_NAME));
             }

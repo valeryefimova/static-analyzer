@@ -6,24 +6,28 @@ import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.efimova.analyzer.*;
+
 import java.util.List;
 
 /**
- * This class holds all checkers and applies them one by one to given file (CU).
+ * This file if for testing static analyer. Intentionally contains errors.
  */
 @Service
-public class Analyzer {
+public class BadFile2 {
     private List<BaseRuleChecker> ruleCheckers;
     @Getter
     private Context ctx;
+
+    public static final String s = "S";
+
     @Autowired
-    public void setRuleCheckers(List<BaseRuleChecker> ruleCheckers){
+    public void SetRuleCheckers(List<BaseRuleChecker> ruleCheckers){
         this.ruleCheckers = ruleCheckers;
     }
 
-
     @Autowired
-    public void setCtx(Context ctx) {
+    public void set_Ctx(Context ctx) {
         this.ctx = ctx;
     }
 
@@ -31,6 +35,23 @@ public class Analyzer {
     public void processUnit(CompilationUnit unit) {
         for (BaseRuleChecker checker: ruleCheckers) {
             checker.visit(unit, ctx);
+            int X = 0;
+            Float _y = X +1;
         }
+
+        boolean b = true;
+        boolean c = false;
+
+        if((b = false) || (c = true)){
+            System.out.println("");
+        }
+
+        String s = null;
+        // something...
+        s = null;
     }
 }
+
+public class SomeClass{}
+
+public class OneMore_Class{}

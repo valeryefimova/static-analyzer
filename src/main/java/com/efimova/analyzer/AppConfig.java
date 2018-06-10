@@ -19,8 +19,8 @@ public class AppConfig {
         return new Context();
     }
     @Bean
-    public AlwaysTrueRule alwaysTrueRule() {
-        return new AlwaysTrueRule();
+    public TopLevelPublicClassRule alwaysTrueRule() {
+        return new TopLevelPublicClassRule();
     }
     @Bean
     public NotNullCuRule notNullCuRule () {

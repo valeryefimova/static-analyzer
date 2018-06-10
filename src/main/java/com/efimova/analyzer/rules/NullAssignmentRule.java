@@ -34,7 +34,7 @@ public class NullAssignmentRule extends BaseRuleChecker {
 
         if (assignExpr.getValue().isNullLiteralExpr()) {
             if (!(parent.get() instanceof Expression && ((Expression) parent.get()).isVariableDeclarationExpr())) {
-                ctx.addMessage(topClassName, "Null assignment found in: \""
+                ctx.addMessage("Null assignment found in: \""
                         + parent.get().toString().replace(System.lineSeparator(), " ")
                         + "\". Make sure you really need to assign NULL here: " + assignExpr.toString());
             }

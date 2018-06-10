@@ -19,13 +19,13 @@ public class ImportFromSamePackageRule extends BaseRuleChecker {
     public void visit(CompilationUnit compilationUnit, Context ctx) {
         topClassName = compilationUnit.getTypes().stream()
                 .filter(t -> t.isPublic() && t.isTopLevelType()).findAny()
-                .map(NodeWithSimpleName::getNameAsString).orElse("Untitled");
+                .map(NodeWithSimpleName::getNameAsString).orElse("Undefined");
 
         Optional<PackageDeclaration> packg = compilationUnit.getPackageDeclaration();
         if (packg.isPresent()) {
             compilationUnit.getImports().forEach(imp -> {
                 if (imp.getName().toString().startsWith(packg.get().getName().toString())) {
-                    ctx.addMessage(topClassName, "Import Statement \""
+                    ctx.addMessage("Import Statement \""
                             + imp.toString().replace(System.lineSeparator(), "")
                             + "\" in not necessary. Import of the same package.");
                 }
