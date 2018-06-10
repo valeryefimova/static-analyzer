@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * This stub checker does nothing
+ * There there is exactly one top level public class in the file.
  */
 @Component
 public class TopLevelPublicClassRule extends BaseRuleChecker {

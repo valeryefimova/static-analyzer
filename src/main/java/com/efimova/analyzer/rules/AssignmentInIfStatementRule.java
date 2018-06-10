@@ -10,11 +10,11 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 /**
- * Avoid assignments in operands; this can make code more complicated and harder to read.
+ * Avoid assignments in If condition; this can make code more complicated and harder to read.
  * <link>https://pmd.github.io/pmd-6.3.0/pmd_rules_java_errorprone.html#assignmentinoperand<link/>
  */
 @Component
-public class AssignmentInOperandsRule extends BaseRuleChecker {
+public class AssignmentInIfStatementRule extends BaseRuleChecker {
 
     @Override
     public void visit(IfStmt ifStmt, Context ctx) {

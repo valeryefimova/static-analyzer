@@ -31,8 +31,8 @@ public class AppConfig {
         return new NamingConventionRule();
     }
     @Bean
-    AssignmentInOperandsRule assignmentInOperandsRule() {
-        return new AssignmentInOperandsRule();
+    AssignmentInIfStatementRule assignmentInOperandsRule() {
+        return new AssignmentInIfStatementRule();
     }
     @Bean
     ImportFromSamePackageRule importFromSamePackageRule(){return new ImportFromSamePackageRule();}
